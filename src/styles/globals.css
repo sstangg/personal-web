@@ -4,6 +4,8 @@ body,
   margin: 0;
   padding: 0;
   min-height: 100%;
+  /* Prevent rubber-band / overscroll on root (modern browsers) */
+  overscroll-behavior: none;
 }
 
 body {

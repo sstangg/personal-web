@@ -5,19 +5,21 @@ import RESUME from "/Sophia_Tang_tech_resume_06042026.pdf?url";
 
 function Pic() {
   return (
-    <div className="aspect-[585/536] w-full overflow-hidden rounded-sm border border-dashed border-black bg-white md:aspect-auto md:h-full md:self-stretch" data-name="pic">
-      <img alt=" acii style portrait photo of me, Sophia Tang" className="scale-[1.05] md:scale-[0.95] h-full w-full object-contain md:object-cover md:object-[center_32%] mix-blend-darken pointer-events-none" src={imgAsciiArt} />
+    <div className="relative aspect-[585/536] w-full overflow-hidden rounded-sm border border-dashed border-black bg-white lg:aspect-auto lg:h-full lg:self-stretch" data-name="pic">
+      <p className={"absolute text-xl font-thin p-3"}>2026/06/21 <br/> 21:14:58</p>
+        <img alt=" acii style portrait photo of me, Sophia Tang" className="scale-[1.05] lg:scale-[0.95] h-full w-full object-contain lg:object-cover lg:object-[center_32%] mix-blend-darken pointer-events-none" src={imgAsciiArt} />
     </div>
   );
 }
 function Description() {
   return (
-    <div className="flex h-full w-full min-w-0 flex-col text-[clamp(1.5rem,6vw,1.7rem)] leading-relaxed text-black">
-      <div className="whitespace-pre-wrap">
-        <span className="mb-0">I study </span>
-          <span className="font-['Inter:Bold',sans-serif] font-bold">Computer Science @ Boston University. </span>
-          <span className="mb-0 text-[clamp(1.4rem,2vw,1.5rem)] font-light">In my free time, I enjoy reading and exploring local cafes. </span>
-      </div>
+    <div className="gap-y-2 flex h-full w-full min-w-0 flex-col  text-black">
+        <p className={"text-[clamp(2rem,3vw,3rem)]"}>My name is Sophia.</p>
+        <p className="text-[clamp(1.7rem,2.5vw,2rem)] mb-0 font-light">
+            I'm a <span className={"underline decoration-dotted decoration-purple-900 decoration-3 underline-offset-4 italic"}>
+                 Computer Science</span> student at <span className={"underline decoration-dotted decoration-purple-900 decoration-3 underline-offset-4 italic"}>
+                 Boston University.</span>
+        </p>
     </div>
   );
 }
@@ -41,10 +43,12 @@ function Connect() {
                     </li>
                 </ul>
             </div>
-            <div className="font-['Inter:Light',sans-serif] font-light whitespace-pre-wrap text-[clamp(1rem,1.7vw,1.4rem)]">
+            <div className="font-['Inter:Light',sans-serif] font-light whitespace-pre-wrap text-[clamp(1.3rem,1.5vw,1.4rem)]">
                 <p className="mb-0">
                     <span className="font-['Inter:Medium',sans-serif] font-medium leading-[normal] not-italic">{`Affiliations: `}</span>
-                    <span className="leading-[normal]">{`Girls Who Code, Rewriting The Code, AI Safety Association (AISA), Humanities and Artificial Intelligence Lab (HAIL)`}</span>
+                    <span className="leading-[normal]"><span className={"underline decoration-dotted decoration-purple-900 decoration-2 underline-offset-3 "}>Girls Who Code</span>,
+                        <br/>Rewriting The Code, AI Safety Association (AISA),
+                        <br/>Humanities and Artificial Intelligence Lab (HAIL)</span>
                 </p>
             </div>
         </div>
@@ -53,14 +57,13 @@ function Connect() {
 
 function Intro() {
   return (
-    <div className="flex h-full w-full min-w-0 flex-1 flex-col justify-between overflow-hidden text-black" data-name="intro">
-      <div className="flex flex-col gap-5 font-['Inter:Medium','Noto_Sans_JP:Medium',sans-serif] font-medium text-[clamp(2rem,5vw,2.8rem)]">
-        <p className="leading-none">
+    <div className="gap-y-5 flex h-full w-full min-w-0 flex-1 flex-col justify-between overflow-hidden text-black" data-name="intro">
+      <div className="mt-5 flex flex-col font-['Inter:Medium','Noto_Sans_JP:Medium',sans-serif] font-medium text-[clamp(2rem,5vw,3.5rem)]">
+        <p className=" leading-none">
           <span>{`Hello `}</span>
           <span>你好!</span>
         </p>
-        <p>My name is Sophia.</p>
-      </div>
+         </div>
       <div className="min-h-0">
         <Description />
       </div>
@@ -74,8 +77,12 @@ function Intro() {
 function Main() {
   return (
     <div className={`${TWO_COLUMN_PAGE_GRID} flex-1 min-h-0 items-stretch gap-10 text-black`}>
-         <Pic />
-        <Intro />
+      <div className="flex lg:block justify-center lg:h-full">
+        <div className="w-3/4 lg:w-full lg:h-full ">
+          <Pic />
+        </div>
+      </div>
+      <Intro />
     </div>
   );
 }

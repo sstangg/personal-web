@@ -32,7 +32,7 @@ const projects: ProjectItem[] = [
     image: imgSewageAlgae,
     title: "Sewage & Algae Blooms Monitoring",
     imageClassName: "object-[center_top]",
-    description: `Tracking U.S. water pollution due to sewage & algae using data scrapers`,
+    description: `Tracking U.S. water pollution from sewage & algae using data scraping`,
     alt: "Sewage overflow in Cambridge, MA",
     date: "Jan 2026 - May 2026",
     links: [
@@ -95,10 +95,13 @@ function ProjectCard({ project }: { project: ProjectItem }) {
     imageContainStrategy = "object-contain";
   }
   return (
-    <div className="h-[20rem] md:h-[27rem] gap-4 content-stretch flex flex-col items-start justify-self-stretch relative w-full" data-name="project">
+    <div className="h-[20rem] sm:h-[18rem] md:h-[23rem]  lg:h-[25rem] gap-4 content-stretch flex flex-col items-start justify-self-stretch relative w-full" data-name="project">
       <div className="h-[60%] w-full overflow-hidden rounded-[5px] shrink-0 border border-black border-dashed pointer-events-none" data-name="img">
         <div className="relative size-full overflow-hidden rounded-[inherit]">
           <img alt={alt} className={`absolute inset-0 h-full w-full pointer-events-none ${imageContainStrategy} ${imageClassName ?? ""}`} src={image} />
+          <div className="absolute inset-0 pointer-events-none rounded-[inherit]" style={{
+            background: 'radial-gradient(ellipse 50% 50% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 35%, transparent 45%), radial-gradient(ellipse 50% 50% at 100% 100%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 35%, transparent 95%)'
+          }} />
         </div>
       </div>
 
