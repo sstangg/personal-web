@@ -1,0 +1,33 @@
+# robots.txt — discourage crawlers (including AI crawlers)
+# Note: robots.txt is voluntary and may be ignored by determined scrapers.
+
+# Default: disallow everything
+User-agent: *
+Disallow: /
+
+# Explicitly name known AI crawler identifiers (may help well-behaved crawlers)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OpenAI
+Disallow: /
+
+User-agent: ChatGPT
+Disallow: /
+
+User-agent: Googlebot
+Disallow: /
+
+User-agent: bingbot
+Disallow: /
+
+User-agent: Claude
+Disallow: /
+
+User-agent: Perplexity
+Disallow: /
+
+# Polite crawl-delay (not enforced everywhere)
+Crawl-delay: 10
+
+# See also: X-Robots-Tag headers and <meta name="robots"> in HTML for reinforcement.
