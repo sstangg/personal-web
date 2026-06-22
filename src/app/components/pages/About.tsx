@@ -1,8 +1,7 @@
 import PageLayout from "../PageLayout";
 import imgAsciiArt from "@/assets/About/ascii-portrait.png";
 import { TWO_COLUMN_PAGE_GRID } from "../layoutClasses";
-import RESUME from "/Sophia_Tang_tech_resume_06042026.pdf?url";
-
+const RESUME = "https://drive.google.com/file/d/1m6aSSQQVoSvv8ptv1Ae0v5oK0rpojOL_/view?usp=drive_link";
 function Pic() {
   return (
     <div className="relative aspect-[585/536] w-full overflow-hidden rounded-sm border border-dashed border-black bg-white lg:aspect-auto lg:h-full lg:self-stretch" data-name="pic">
