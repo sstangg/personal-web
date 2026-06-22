@@ -26,6 +26,78 @@ const TAGS: Record<string, Tag> = {
   "looker-studio": { label: "Looker Studio", imgSrc: imgLookerStudio, alt: "Looker Studio icon", borderColor: "#0d2ca6", textColor: "#0d2ca6", bgClass: "bg-[#f7f8fc]"},
   "python": { label: "Python", imgSrc: imgPython, alt: "Python icon", borderColor: "#0d2ca6", textColor: "#0d2ca6", bgClass: "bg-[#f7f8fc]" },
 };
+const items = [
+  {
+    title: "Software Engineering Intern",
+    dates: "May 2026 - Present",
+    company: "Principal Financial Group",
+    bullets: [] as string[],
+    tags: [] as string[],
+  },
+  {
+    title: "Treasurer",
+    dates: "Jan 2026 -  Present",
+    company: "Girls Who Code Boston University",
+    bullets: [
+      "Managed a $2.7K club budget using university financial systems and Google Sheets across 19 tech events",
+      "Coordinated with 4 campus funding sources to secure $1.3K+ in additional funding through pitches & requests",
+    ],
+    tags: ["google-sheets"],
+  },
+  {
+    title: "Web Designer",
+    dates: "Oct 2025 -  Feb 2026",
+    company: "Ohana Village Foundation",
+    bullets: [
+      "Designed a donor-facing website for a nonprofit client in a 4 person team using Figma and GoDaddy web builder",
+      "Presented weekly in standup meetings with the client to gather feedback on brand voice and UX, translating their input into concrete design and content updates accounting for accessibility for elderly users",
+    ],
+    tags: ["figma"],
+  },
+  {
+    title: "Software Development Intern",
+    dates: "June - Aug 2025",
+    company: "ClinicMind ⋅ Part-Time",
+    bullets: [
+      "Use Angular (v17+) with TypeScript & TailwindCSS to debug & maintain a portal for healthcare practitioners",
+      "Collaborated with QA and management to clarify bug priorities and communicate fix decisions",
+      "Ensured smooth integration of UI fixes into production via GitLab CI/CD pipelines",
+    ],
+    tags: ["angular", "typescript"],
+  },
+  {
+    title: "Data Analytics Intern",
+    dates: "May - Aug 2025",
+    company: "Aspire High Youth Development ⋅ Part-Time",
+    bullets: [
+      "Directed a team of 5 interns to analyze survey data from Aspire High's educational programs",
+      "Identified KPIs and designed Looker Studio dashboards to provide actionable insights for educators",
+      "Automated survey data processing with JavaScript, saving 2+ hours of work for specialized dashboards",
+      "Reduced workload by 50% by refining the project scope, establishing technical standards and documentation",
+    ],
+    tags: ["javascript", "looker-studio", "google-sheets"],
+  },
+  {
+    title: "Coding Instructor",
+    dates: "Mar - Apr 2025",
+    company: "Girls Who Code Boston University",
+    bullets: [
+      "Taught 10 girls (grades 6-12) introductory Python through weekly remote lessons; designed lessons and homework assignments tailored to student skill levels",
+    ],
+    tags: ["python"],
+  },
+  {
+    title: "Research Assistant",
+    dates: "Apr -  Aug 2024",
+    company: "National Emerging Infectious Disease Laboratories (NEIDL)",
+    bullets: [
+      "Executed, designed, and troubleshooted 150+ genetic cloning experiments to optimize Hepatitis C cell culturing systems with lab manager",
+      "Gained experience with sterile technique, pipetting, and writing protocols",
+    ],
+    tags: [],
+  },
+];
+
 
 function Timeline() {
   return (
@@ -78,35 +150,35 @@ function ExperienceItem({ title, company, dates, bullets = [], tags = [] }: Expe
           <h3 className="flex-1 min-w-0 font-['Inter:Regular',sans-serif] font-normal not-italic text-[clamp(1.5rem,3vw,2rem)] text-black leading-[1.05]">{title}</h3>
           <p className="mt-2 md:mt-0 md:ml-4 font-['Inter:Light_Italic',sans-serif] font-light italic leading-[normal] shrink-0 text-[clamp(1rem,1.5vw,1.25rem)] text-black whitespace-nowrap self-start md:self-auto">{dates}</p>
         </div>
-        {company && (
           <div className="w-full">
-            <p className="font-['Inter:Regular','Noto_Sans:Regular',sans-serif] font-normal not-italic text-[clamp(1rem,1.5vw,1.25rem)] text-black mt-1">{company}</p>
-          </div>
-        )}
+              <p className="font-['Inter:Regular','Noto_Sans:Regular',sans-serif] text-[clamp(1.2rem,1.5vw,1.25rem)] text-purple-950 mt-1">{company}</p>
+            </div>
+        <div className={"content-stretch flex flex-col gap-3 items-start"}>
         {bullets.length > 0 && (
-          <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full">
-            <ul className="block font-['Inter:Light',sans-serif] font-light leading-[0] list-disc not-italic relative shrink-0 text-[clamp(0.95rem,1.4vw,1.125rem)] text-black w-full">
-              {bullets.map((b, i) => (
-                <li key={i} className={i === 0 ? "mb-0 ms-6" : "ms-6"}>
-                  <span className="leading-[normal]">{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        <div className="w-full">
-          {tags.length > 0 && (
-            <div className="content-stretch flex flex-wrap items-center relative w-full gap-2">
-              {tags
-                .map((key) => TAGS[key])
-                .filter(Boolean)
-                .map((t, idx) => (
-                  <div key={idx}>
-                    <TagPill {...t} />
-                  </div>
+            <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full">
+              <ul className="block font-['Inter:Light',sans-serif] font-light leading-[0] list-disc not-italic relative shrink-0 text-[clamp(0.95rem,1.4vw,1.125rem)] text-black w-full ">
+                {bullets.map((b, i) => (
+                  <li key={i} className={"mb-1 ms-6"}>
+                    <span className="leading-[normal]">{b}</span>
+                  </li>
                 ))}
+              </ul>
             </div>
           )}
+          <div className="w-full">
+            {tags.length > 0 && (
+              <div className="content-stretch flex flex-wrap items-center relative w-full gap-4">
+                {tags
+                  .map((key) => TAGS[key])
+                  .filter(Boolean)
+                  .map((t, idx) => (
+                    <div key={idx}>
+                      <TagPill {...t} />
+                    </div>
+                  ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -114,78 +186,6 @@ function ExperienceItem({ title, company, dates, bullets = [], tags = [] }: Expe
 }
 
 function Main() {
-  const items = [
-    {
-      title: "Software Engineering Intern",
-      dates: "May 2026 - Present",
-      company: "Principal Financial Group",
-      bullets: [] as string[],
-      tags: [] as string[],
-    },
-    {
-      title: "Treasurer",
-      dates: "Jan 2026 -  Present",
-      company: "Girls Who Code Boston University",
-      bullets: [
-        "Managed a $2.7K club budget using university financial systems and Google Sheets across 19 tech events",
-        "Coordinated with 4 campus funding sources to secure $1.3K+ in additional funding through pitches & requests",
-      ],
-      tags: ["google-sheets"],
-    },
-    {
-      title: "Web Designer",
-      dates: "Oct 2025 -  Feb 2026",
-      company: "Ohana Village Foundation",
-      bullets: [
-        "Designed a donor-facing website for a nonprofit client in a 4 person team using Figma and GoDaddy web builder",
-        "Presented weekly in standup meetings with the client to gather feedback on brand voice and UX, translating their input into concrete design and content updates accounting for accessibility for elderly users",
-      ],
-      tags: ["figma"],
-    },
-    {
-      title: "Software Development Intern",
-      dates: "June - Aug 2025",
-      company: "ClinicMind ⋅ Part-Time",
-      bullets: [
-        "Use Angular (v17+) with TypeScript & TailwindCSS to debug & maintain a portal for healthcare practitioners",
-        "Collaborated with QA and management to clarify bug priorities and communicate fix decisions",
-        "Ensured smooth integration of UI fixes into production via GitLab CI/CD pipelines",
-      ],
-      tags: ["angular", "typescript"],
-    },
-    {
-      title: "Data Analytics Intern",
-      dates: "May - Aug 2025",
-      company: "Aspire High Youth Development ⋅ Part-Time",
-      bullets: [
-        "Directed a team of 5 interns to analyze survey data from Aspire High's educational programs",
-        "Identified KPIs and designed Looker Studio dashboards to provide actionable insights for educators",
-        "Automated survey data processing with JavaScript, saving 2+ hours of work for specialized dashboards",
-        "Reduced workload by 50% by refining the project scope, establishing technical standards and documentation",
-      ],
-      tags: ["javascript", "looker-studio", "google-sheets"],
-    },
-    {
-      title: "Coding Instructor",
-      dates: "Mar - Apr 2025",
-      company: "Girls Who Code Boston University",
-      bullets: [
-        "Taught 10 girls (grades 6-12) introductory Python through weekly remote lessons; designed lessons and homework assignments tailored to student skill levels",
-      ],
-      tags: ["python"],
-    },
-    {
-      title: "Research Assistant",
-      dates: "Apr -  Aug 2024",
-      company: "National Emerging Infectious Disease Laboratories (NEIDL)",
-      bullets: [
-        "Executed, designed, and troubleshooted 150+ genetic cloning experiments to optimize Hepatitis C cell culturing systems with lab manager",
-        "Gained experience with sterile technique, pipetting, and writing protocols",
-      ],
-      tags: [],
-    },
-  ];
-
   return (
     <div className="content-stretch flex w-full flex-col items-start min-h-px relative" data-name="main">
       {items.map((it, idx) => (

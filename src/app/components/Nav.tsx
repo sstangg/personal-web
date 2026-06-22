@@ -8,7 +8,14 @@ export default function Nav() {
   const isAbout = location.pathname === "/";
   const isProjects = location.pathname === "/projects";
   const isExperience = location.pathname === "/experience";
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(() => {
+    try {
+      const v = localStorage.getItem('navHoverIndex');
+      return v ? Number(v) : 0;
+    } catch {
+      return 0;
+    }
+  });
   const throttleRef = useRef(false);
 
 
@@ -17,7 +24,11 @@ export default function Nav() {
       <div
         onMouseEnter={() => {
           if (!throttleRef.current) {
-            setIndex((prev) => (prev + 1) % 3);
+            setIndex((prev) => {
+              const next = (prev + 1) % 3;
+              try { localStorage.setItem('navHoverIndex', String(next)); } catch {}
+              return next;
+            });
             throttleRef.current = true;
             setTimeout(() => {
               throttleRef.current = false;
@@ -29,7 +40,7 @@ export default function Nav() {
       >
         {index === 0 && <div>Sophia Tang</div>}
         {index === 1 && <div className="font-thin">Sophia Siwei Tang</div>}
-        {index === 2 && <div className="font-light">唐思微</div>}
+        {index === 2 && <div className="font-thin">唐思微</div>}
       </div>
       <div className="flex w-full italic flex-wrap items-center justify-between tracking-wide text-[clamp(1.5rem,2.8vw,2rem)] leading-none whitespace-nowrap" data-name="Nav links">
         <Link to="/" className={`${isAbout ? "text-[#6750a4]" : "text-black"}`}>
