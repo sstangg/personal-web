@@ -32,7 +32,7 @@ export default function Nav() {
             throttleRef.current = true;
             setTimeout(() => {
               throttleRef.current = false;
-            }, 100);
+            }, 700);
           }
         }}
         className=" text-[clamp(2rem,4vw,2.5rem)] cursor-pointer font-medium w-fit  leading-none tracking-tight"
@@ -42,14 +42,14 @@ export default function Nav() {
         {index === 1 && <div className="font-thin">Sophia Siwei Tang</div>}
         {index === 2 && <div className="font-thin">唐思微</div>}
       </div>
-      <div className="flex w-full italic flex-wrap items-center justify-between tracking-wide text-[clamp(1.5rem,2.8vw,2rem)] leading-none whitespace-nowrap" data-name="Nav links">
-        <Link to="/" className={`${isAbout ? "text-[#6750a4]" : "text-black"}`}>
+      <div className="flex  w-full italic flex-wrap items-center justify-between tracking-wide text-[clamp(1.5rem,2.8vw,2rem)] leading-none whitespace-nowrap" data-name="Nav links">
+        <Link to="/" className={`hover:text-[#8e76cc] ${isAbout ? "text-[#6750a4]" : "text-black"}`}>
           about
         </Link>
-        <Link to="/projects" className={`${isProjects ? "text-[#6750a4]" : "text-black"}`}>
+        <Link to="/projects" className={`hover:text-[#8e76cc] ${isProjects ? "text-[#6750a4]" : "text-black"}`}>
           projects
         </Link>
-        <Link to="/experience" className={`${isExperience ? "text-[#6750a4]" : "text-black"}`}>
+        <Link to="/experience" className={`hover:text-[#8e76cc] ${isExperience ? "text-[#6750a4]" : "text-black"}`}>
           experience
         </Link>
       </div>

@@ -118,10 +118,10 @@ function ProjectCard({ project }: { project: ProjectItem }) {
                 return (
                   <div key={i} className="content-stretch flex gap-2 items-center justify-center p-2 relative rounded-[5px] shrink-0 mr-2">
                     <div className="flex items-center justify-center h-6 w-6 overflow-hidden">
-                        <Icon className="h-[90%] w-[90%] object-contain" strokeColor="var(--stroke-0, #6750A4)" />
+                        <Icon className="hover:text-[#8e76cc] h-[90%] w-[90%] object-contain" strokeColor="var(--stroke-0, #6750A4)" />
                     </div>
                     <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#6750a4] text-[0px] whitespace-nowrap">
-                      <a className="block cursor-pointer decoration-solid leading-none text-lg underline" href={l.href} target="_blank" rel="noreferrer">
+                      <a className="hover:text-[#8e76cc] block cursor-pointer decoration-solid leading-none text-lg underline" href={l.href} target="_blank" rel="noreferrer">
                         {label}
                       </a>
                     </div>
