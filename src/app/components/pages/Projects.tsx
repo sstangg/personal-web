@@ -1,12 +1,12 @@
 import PageLayout from "../PageLayout";
 import { PosterIcon, GithubIcon, LiveIcon } from "../Icons";
-import imgSewageAlgae from "@/assets/Projects/sewage-algae-blooms.png";
-import imgLegendsOfValor from "@/assets/Projects/legends-of-valor.png";
-import imgBostonCopWatch from "@/assets/Projects/boston-cop-watch.png";
-import imgSoundwaves from "@/assets/Projects/soundwaves.png";
-import imgHereComesTheSun from "@/assets/Projects/here-comes-the-sun.png";
-import imgCapycrew from "@/assets/Projects/capycrew.png";
-import imgAiAtBu from "@/assets/Projects/ai-at-bu.png";
+import imgSewageAlgae from "@/assets/Projects/sewage-algae-blooms.webp";
+import imgLegendsOfValor from "@/assets/Projects/legends-of-valor.webp";
+import imgBostonCopWatch from "@/assets/Projects/boston-cop-watch.webp";
+import imgSoundwaves from "@/assets/Projects/soundwaves.webp";
+import imgHereComesTheSun from "@/assets/Projects/here-comes-the-sun.webp";
+import imgCapycrew from "@/assets/Projects/capycrew.webp";
+import imgAiAtBu from "@/assets/Projects/ai-at-bu.webp";
 
 // Centralized mapping of link "types" to presentation (icon + label).
 const LINK_TYPES = {
